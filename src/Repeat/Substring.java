@@ -15,9 +15,15 @@ public class Substring
         String lastChar = input.substring(input.length() - 1, input.length());
         int index = 0;
 
-        while (index < input.length() && answer)
+        while (index < (input.length()-1) && !answer)
         {
             String currentChar = input.substring(index, index + 1);
+
+            if (currentChar.equals(lastChar))
+            {
+                answer = true;
+            }
+            index++;
         }
 
         return answer;
