@@ -13,6 +13,12 @@ public class Substring
     {
         boolean answer = false;
         String lastChar = input.substring(input.length() - 1, input.length());
+        int index = 0;
+
+        while (index < input.length() && answer)
+        {
+            String currentChar = input.substring(index, index + 1);
+        }
 
         return answer;
     }
