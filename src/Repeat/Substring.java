@@ -25,7 +25,6 @@ public class Substring
             }
             index++;
         }
-
         return answer;
     }
 
