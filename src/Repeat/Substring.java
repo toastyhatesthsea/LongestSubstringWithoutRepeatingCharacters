@@ -4,6 +4,14 @@ public class Substring
 {
 
 
+    public int lengthOfLongestSubstring(String s) {
+        int answer = 1;
+
+
+        return answer;
+    }
+
+
     /**
      * Checks for any repeating characters by checking the last character throughout the String
      * @param input String
