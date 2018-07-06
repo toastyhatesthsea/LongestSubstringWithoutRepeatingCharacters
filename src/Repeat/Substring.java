@@ -6,7 +6,16 @@ public class Substring
 
     public int lengthOfLongestSubstring(String s) {
         int answer = 1;
+        int index = 0;
 
+        if (s.length() == 1)
+        {
+            return answer;
+        }
+        else
+        {
+
+        }
 
         return answer;
     }
