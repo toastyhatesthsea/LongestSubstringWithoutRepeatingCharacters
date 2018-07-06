@@ -17,6 +17,16 @@ public class Substring
         return answer;
     }
 
+}
 
+class SubstringTesters
+{
+    public static void main(String[] asfgsgd)
+    {
+        Substring rawrs = new Substring();
+
+        rawrs.checkForRepeating("abc");
+
+    }
 
 }
