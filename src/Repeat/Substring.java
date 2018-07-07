@@ -9,31 +9,6 @@ public class Substring
     public int lengthOfLongestSubstring(String s)
     {
 
-
-        int charCount = 0;
-        int highest = 0;
-        int currentIndex = 0;
-
-        if (s.length() == 1)
-        {
-            return s.length();
-        } else
-        {
-            for (int i = 0; i < s.length(); i++)
-            {
-                String beginningChar = s.substring(i, i + 1);
-                boolean foundDuplicate = false;
-                for (int j = i + 1; j < s.length() && !foundDuplicate; j++)
-                {
-                    charCount++;
-                    String aSubstring = s.substring(i, s.length());
-
-                    int locationOfRepeat = checkForRepeating(aSubstring, j);
-
-                }
-            }
-
-        }
         return 0;
     }
 
@@ -74,7 +49,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.checkForRepeating("abccdefg", 0);
+        int answer = rawrs.checkForRepeating("abcdeafg", 0);
 
     }
 
