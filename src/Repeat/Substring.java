@@ -16,9 +16,18 @@ public class Substring
         }
         else
         {
+            boolean hasNoRepeats = true;
             while (startingIndex < s.length() - 1)
             {
-                aSubstring = s.substring(in)
+                while (hasNoRepeats)
+                {
+                    aSubstring = s.substring(startingIndex, endingIndex + 1);
+                    hasNoRepeats = checkForRepeating(aSubstring);
+                    endingIndex++;
+                }
+                startingIndex = endingIndex;
+                endingIndex++;
+                answer = aSubstring.length();
             }
         }
 
