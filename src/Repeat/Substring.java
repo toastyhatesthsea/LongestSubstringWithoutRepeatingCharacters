@@ -16,7 +16,8 @@ public class Substring
         }
         else
         {
-            for (int i = 0; i < s.length(); i++)
+            boolean done = false;
+            for (int i = 0; i < s.length() && !done; i++)
             {
                 String aSubstring = s.substring(i, s.length());
                 int locationOfRepeating = checkForRepeating(aSubstring, i);
@@ -26,12 +27,16 @@ public class Substring
                 if (currentLength > longestLength)
                 {
                     longestLength = currentLength;
-                    i = locationOfRepeating - 1;
+                }
+
+                if (longestLength >= aSubstring.length())
+                {
+                    done = true;
                 }
             }
         }
 
-        return 0;
+        return longestLength;
     }
 
 
