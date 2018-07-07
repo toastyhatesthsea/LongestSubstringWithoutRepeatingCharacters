@@ -14,6 +14,10 @@ public class Substring
         {
             return longestLength;
         }
+        else if (s.length() == 0)
+        {
+            return 0;
+        }
         else
         {
             boolean done = false;
