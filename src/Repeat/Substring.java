@@ -27,7 +27,7 @@ public class Substring
                 }
                 startingIndex = endingIndex;
                 endingIndex++;
-                answer = aSubstring.length();
+                answer = aSubstring.length() - 1;
             }
         }
 
@@ -67,7 +67,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.lengthOfLongestSubstring("abchc");
+        int answer = rawrs.lengthOfLongestSubstring("abcabcbb");
 
     }
 
