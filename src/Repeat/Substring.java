@@ -34,7 +34,7 @@ public class Substring
                 }
                 else if (aSubstring.length() >= s.length() - startingIndex)
                 {
-                    currentLength = aSubstring.length();
+                    currentLength = aSubstring.length() - 1;
                     done = true;
                 }
                 else
@@ -89,7 +89,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.lengthOfLongestSubstring("abccabcdfe");
+        int answer = rawrs.lengthOfLongestSubstring("abc");
 
     }
 
