@@ -4,7 +4,8 @@ public class Substring
 {
 
 
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstring(String s)
+    {
 
 
         int charCount = 0;
@@ -14,8 +15,7 @@ public class Substring
         if (s.length() == 1)
         {
             return s.length();
-        }
-        else
+        } else
         {
             for (int i = 0; i < s.length(); i++)
             {
@@ -24,18 +24,14 @@ public class Substring
                 for (int j = i + 1; j < s.length() && !foundDuplicate; j++)
                 {
                     charCount++;
-                    String currentChar = s.substring(j, j + 1);
+                    String aSubstring = s.substring(i, s.length());
 
-                    if (beginningChar.equals(currentChar))
-                    {
-                        foundDuplicate = true;
-                        if(charCount - 1 >)
-                    }
+                    boolean hasRepeats = checkForRepeating(aSubstring);
                 }
             }
-        }
 
         }
+    }
 
 
 
