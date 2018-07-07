@@ -44,30 +44,7 @@ public class Substring
      */
     public int checkForRepeating(String input, int startingIndex)
     {
-        boolean answer = false;
-        int location = 0;
-        int index = 0;
-        String firstChar = input.substring(index, index + 1);
 
-        for(int oneLargerThanIndex = index + 1; oneLargerThanIndex < input.length() && !answer; oneLargerThanIndex++)
-        {
-            String currentChar = input.substring(index + 1, index + 1);
-
-            if (currentChar.equals(firstChar))
-            {
-                answer = true;
-                location = oneLargerThanIndex;
-            }
-        }
-
-        if (location != 0)
-        {
-            return location;
-        }
-        else
-        {
-            return startingIndex;
-        }
     }
 
 }
@@ -78,7 +55,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.lengthOfLongestSubstring("abccdefg");
+        int answer = rawrs.checkForRepeating("abccdefg", 0);
 
     }
 
