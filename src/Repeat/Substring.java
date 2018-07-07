@@ -67,7 +67,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        rawrs.checkForRepeating("abc");
+        int answer = rawrs.lengthOfLongestSubstring("abchc");
 
     }
 
