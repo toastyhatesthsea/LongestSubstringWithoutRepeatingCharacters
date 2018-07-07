@@ -25,8 +25,6 @@ public class Substring
                     repeats = checkForRepeating(aSubstring);
                     endingIndex++;
                 }
-                startingIndex = endingIndex;
-                endingIndex++;
 
                 if (startingIndex >= s.length() - 1 && !repeats)
                 {
@@ -36,6 +34,9 @@ public class Substring
                 {
                     answer = aSubstring.length() - 1;
                 }
+                startingIndex++;
+                endingIndex = startingIndex;
+                endingIndex++;
                 repeats = false;
             }
     }
@@ -76,7 +77,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.lengthOfLongestSubstring("abca");
+        int answer = rawrs.lengthOfLongestSubstring("abcabcbb");
 
     }
 
