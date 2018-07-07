@@ -5,19 +5,21 @@ public class Substring
 
 
     public int lengthOfLongestSubstring(String s) {
-        int answer = 1;
+        int currentLength = 1;
+        int highest = currentLength;
         int startingIndex = 0;
         int endingIndex = 1;
         String aSubstring = "";
 
         if (s.length() == 1)
         {
-            return answer;
+            return currentLength;
         }
         else
         {
             boolean repeats = false;
-            while (startingIndex < s.length() - 1)
+            boolean done = false;
+            while (startingIndex < s.length() - 1 && !done)
             {
                 while (!repeats && (endingIndex + 1) <= s.length())
                 {
@@ -28,20 +30,30 @@ public class Substring
 
                 if (startingIndex >= s.length() - 1 && !repeats)
                 {
-                    answer = aSubstring.length();
+                    currentLength = aSubstring.length();
+                }
+                else if (aSubstring.length() >= s.length() - startingIndex)
+                {
+                    currentLength = aSubstring.length();
+                    done = true;
                 }
                 else
                 {
-                    answer = aSubstring.length() - 1;
+                    currentLength = aSubstring.length() - 1;
+                }
+
+                if (currentLength > highest)
+                {
+                    highest = currentLength;
                 }
                 startingIndex++;
                 endingIndex = startingIndex;
                 endingIndex++;
                 repeats = false;
             }
-    }
+        }
 
-        return answer;
+        return highest;
     }
 
 
@@ -77,7 +89,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.lengthOfLongestSubstring("abcabcbb");
+        int answer = rawrs.lengthOfLongestSubstring("abccabcdfe");
 
     }
 
