@@ -30,11 +30,11 @@ public class Substring
 
             if (startingIndex >= s.length() - 1)
             {
-                answer = aSubstring.length() - 1;
+                answer = aSubstring.length();
             }
             else
             {
-                answer = aSubstring.length();
+                answer = aSubstring.length() - 1;
             }
             repeats = false;
         }
@@ -76,7 +76,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.lengthOfLongestSubstring("abcc");
+        int answer = rawrs.lengthOfLongestSubstring("abc");
 
     }
 
