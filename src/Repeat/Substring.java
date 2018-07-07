@@ -85,7 +85,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.lengthOfLongestSubstring("abcdeafg");
+        int answer = rawrs.lengthOfLongestSubstring("abccdef");
 
     }
 
