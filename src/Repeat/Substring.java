@@ -45,7 +45,8 @@ public class Substring
     {
         HashMap<String, Integer> rawrs = new HashMap<>();
         boolean foundRepeat = false;
-        int repeatIndexLocation = startingIndex;
+        int repeatIndexLocation = 0;
+        int count = 0;
 
         for (int i = 0; i < input.length() && !foundRepeat; i++)
         {
@@ -59,8 +60,16 @@ public class Substring
             {
                 rawrs.put(currentChar, 1);
             }
+            count ++;
         }
-        return repeatIndexLocation;
+        if (foundRepeat)
+        {
+            return repeatIndexLocation + startingIndex;
+        }
+        else
+        {
+            return count + startingIndex;
+        }
     }
 
 }
