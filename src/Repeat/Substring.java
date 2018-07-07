@@ -17,27 +17,27 @@ public class Substring
         else
         {
             boolean repeats = false;
-        while (startingIndex < s.length() - 1)
-        {
-            while (!repeats && (endingIndex + 1) <= s.length())
+            while (startingIndex < s.length() - 1)
             {
-                aSubstring = s.substring(startingIndex, endingIndex + 1);
-                repeats = checkForRepeating(aSubstring);
+                while (!repeats && (endingIndex + 1) <= s.length())
+                {
+                    aSubstring = s.substring(startingIndex, endingIndex + 1);
+                    repeats = checkForRepeating(aSubstring);
+                    endingIndex++;
+                }
+                startingIndex = endingIndex;
                 endingIndex++;
-            }
-            startingIndex = endingIndex;
-            endingIndex++;
 
-            if (startingIndex >= s.length() - 1)
-            {
-                answer = aSubstring.length();
+                if (startingIndex >= s.length() - 1 && !repeats)
+                {
+                    answer = aSubstring.length();
+                }
+                else
+                {
+                    answer = aSubstring.length() - 1;
+                }
+                repeats = false;
             }
-            else
-            {
-                answer = aSubstring.length() - 1;
-            }
-            repeats = false;
-        }
     }
 
         return answer;
@@ -76,7 +76,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.lengthOfLongestSubstring("abc");
+        int answer = rawrs.lengthOfLongestSubstring("abca");
 
     }
 
