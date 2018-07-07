@@ -19,13 +19,14 @@ public class Substring
             for (int i = 0; i < s.length(); i++)
             {
                 String aSubstring = s.substring(i, s.length());
-                int currentLocation = checkForRepeating(aSubstring, i);
+                int locationOfRepeating = checkForRepeating(aSubstring, i);
 
-                int currentLength = currentLocation - i;
+                int currentLength = locationOfRepeating - i;
 
                 if (currentLength > longestLength)
                 {
                     longestLength = currentLength;
+                    i = locationOfRepeating - 1;
                 }
             }
         }
@@ -70,7 +71,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.checkForRepeating("abcdeafg", 0);
+        int answer = rawrs.lengthOfLongestSubstring("abcdeafg");
 
     }
 
