@@ -16,13 +16,13 @@ public class Substring
         }
         else
         {
-            boolean hasNoRepeats = true;
+            boolean repeats = false;
             while (startingIndex < s.length() - 1)
             {
-                while (hasNoRepeats)
+                while (!repeats)
                 {
                     aSubstring = s.substring(startingIndex, endingIndex + 1);
-                    hasNoRepeats = checkForRepeating(aSubstring);
+                    repeats = checkForRepeating(aSubstring);
                     endingIndex++;
                 }
                 startingIndex = endingIndex;
