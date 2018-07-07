@@ -8,6 +8,27 @@ public class Substring
 
     public int lengthOfLongestSubstring(String s)
     {
+        int longestLength = 1;
+
+        if (s.length() == 1)
+        {
+            return longestLength;
+        }
+        else
+        {
+            for (int i = 0; i < s.length(); i++)
+            {
+                String aSubstring = s.substring(i, s.length());
+                int currentLocation = checkForRepeating(aSubstring, i);
+
+                int currentLength = currentLocation - i;
+
+                if (currentLength > longestLength)
+                {
+                    longestLength = currentLength;
+                }
+            }
+        }
 
         return 0;
     }
