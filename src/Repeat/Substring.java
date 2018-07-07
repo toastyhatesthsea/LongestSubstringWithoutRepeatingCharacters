@@ -32,10 +32,14 @@ public class Substring
                 {
                     currentLength = aSubstring.length();
                 }
-                else if (aSubstring.length() >= s.length() - startingIndex)
+                else if (aSubstring.length() >= s.length() - startingIndex && repeats)
                 {
                     currentLength = aSubstring.length() - 1;
                     done = true;
+                }
+                else if (s.length() == aSubstring.length())
+                {
+                    currentLength = aSubstring.length();
                 }
                 else
                 {
