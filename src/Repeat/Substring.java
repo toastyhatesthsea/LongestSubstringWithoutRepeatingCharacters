@@ -27,7 +27,15 @@ public class Substring
             }
             startingIndex = endingIndex;
             endingIndex++;
-            answer = aSubstring.length();
+
+            if (startingIndex >= s.length() - 1)
+            {
+                answer = aSubstring.length() - 1;
+            }
+            else
+            {
+                answer = aSubstring.length();
+            }
             repeats = false;
         }
     }
@@ -68,7 +76,7 @@ class SubstringTesters
     {
         Substring rawrs = new Substring();
 
-        int answer = rawrs.lengthOfLongestSubstring("abanshabncfgertyabcdf");
+        int answer = rawrs.lengthOfLongestSubstring("abcc");
 
     }
 
