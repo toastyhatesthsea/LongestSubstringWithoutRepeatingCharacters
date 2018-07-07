@@ -44,7 +44,25 @@ public class Substring
      */
     public int checkForRepeating(String input, int startingIndex)
     {
+        int location = startingIndex;
+        boolean foundRepeat = false;
 
+        for (int i = 0; i < input.length() && !foundRepeat; i++)
+        {
+            String firstChar = input.substring(i, i + 1);
+
+            for (int j = i + 1; j < input.length() && !foundRepeat; j++)
+            {
+                String currentChar = input.substring(j, j + 1);
+
+                if (firstChar.equals(currentChar))
+                {
+                    location = j;
+                    foundRepeat = true;
+                }
+            }
+        }
+        return location;
     }
 
 }
