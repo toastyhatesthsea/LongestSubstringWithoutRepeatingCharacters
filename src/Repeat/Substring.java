@@ -6,7 +6,9 @@ public class Substring
 
     public int lengthOfLongestSubstring(String s) {
         int answer = 1;
-        int index = 0;
+        int startingIndex = 0;
+        int endingIndex = 1;
+        String aSubstring = "";
 
         if (s.length() == 1)
         {
@@ -14,7 +16,10 @@ public class Substring
         }
         else
         {
-
+            while (startingIndex < s.length() - 1)
+            {
+                aSubstring = s.substring(in)
+            }
         }
 
         return answer;
