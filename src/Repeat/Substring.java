@@ -6,6 +6,11 @@ public class Substring
 {
 
 
+    /**
+     * Finds the length of the longest substring in the input
+     * @param s String
+     * @return int
+     */
     public int lengthOfLongestSubstring(String s)
     {
         int longestLength = 1;
@@ -44,8 +49,8 @@ public class Substring
     }
 
 
-    /** Returns the location of the duplicate entry in the substring
-     *
+    /** Returns the location of the duplicate entry in the substring by using a Hashmap
+     * Hashmap checks to make sure there are no duplicates after the character is added
      * @param input String
      * @param startingIndex int
      * @return int
