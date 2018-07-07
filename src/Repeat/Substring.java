@@ -26,7 +26,7 @@ public class Substring
                     charCount++;
                     String aSubstring = s.substring(i, s.length());
 
-                    boolean hasRepeats = checkForRepeating(aSubstring);
+                    boolean hasRepeats = checkForRepeating(aSubstring, j);
                 }
             }
 
@@ -34,16 +34,16 @@ public class Substring
     }
 
 
-
-
-    /**
-     * Checks for any repeating characters by checking the last character throughout the String
+    /** Returns the location of the duplicate entry in the substring
+     *
      * @param input String
-     * @return boolean
+     * @param startingIndex int
+     * @return int
      */
-    public boolean checkForRepeating(String input)
+    public int checkForRepeating(String input, int startingIndex)
     {
         boolean answer = false;
+        int location = 0;
         String lastChar = input.substring(input.length() - 1, input.length());
         int index = 0;
 
@@ -54,10 +54,19 @@ public class Substring
             if (currentChar.equals(lastChar))
             {
                 answer = true;
+                location = index;
             }
             index++;
         }
-        return answer;
+
+        if (location != 0)
+        {
+            return location;
+        }
+        else
+        {
+            return startingIndex;
+        }
     }
 
 }
