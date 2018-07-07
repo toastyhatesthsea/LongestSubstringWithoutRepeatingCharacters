@@ -28,11 +28,11 @@ public class Substring
 
                     int locationOfRepeat = checkForRepeating(aSubstring, j);
 
-                    if(locationOfRepeat)
                 }
             }
 
         }
+        return 0;
     }
 
 
@@ -46,19 +46,18 @@ public class Substring
     {
         boolean answer = false;
         int location = 0;
-        String firstChar = input.substring(0, 1);
         int index = 0;
+        String firstChar = input.substring(index, index + 1);
 
-        while (index < (input.length()-1) && !answer)
+        for(int oneLargerThanIndex = index + 1; oneLargerThanIndex < input.length() && !answer; oneLargerThanIndex++)
         {
-            String currentChar = input.substring(index, index + 1);
+            String currentChar = input.substring(index + 1, index + 1);
 
             if (currentChar.equals(firstChar))
             {
                 answer = true;
-                location = index;
+                location = oneLargerThanIndex;
             }
-            index++;
         }
 
         if (location != 0)
