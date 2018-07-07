@@ -26,7 +26,9 @@ public class Substring
                     charCount++;
                     String aSubstring = s.substring(i, s.length());
 
-                    boolean hasRepeats = checkForRepeating(aSubstring, j);
+                    int locationOfRepeat = checkForRepeating(aSubstring, j);
+
+                    if(locationOfRepeat)
                 }
             }
 
@@ -44,14 +46,14 @@ public class Substring
     {
         boolean answer = false;
         int location = 0;
-        String lastChar = input.substring(input.length() - 1, input.length());
+        String firstChar = input.substring(0, 1);
         int index = 0;
 
         while (index < (input.length()-1) && !answer)
         {
             String currentChar = input.substring(index, index + 1);
 
-            if (currentChar.equals(lastChar))
+            if (currentChar.equals(firstChar))
             {
                 answer = true;
                 location = index;
